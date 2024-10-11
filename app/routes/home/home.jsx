@@ -10,6 +10,7 @@ import sliceTexture from '~/assets/slice-app.jpg';
 import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import headsetTexture from '~/assets/headsetTexture.jpg';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -41,8 +42,8 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'Designer + Developer',
-    description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
+    title: 'Realidades + X',
+    description: `Design webpage of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
   });
 };
 
@@ -53,10 +54,14 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
+  const projectFive = useRef();
+  const projectSix = useRef();
+  const projectSeven = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, projectFive, projectSix, projectSeven, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -103,19 +108,20 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
-        buttonText="View project"
+        title="Explora Nuevos Mundos con Realidad Virtual"
+        description="Creamos experiencias inmersivas en 3D que transportan a los usuarios a mundos virtuales para entretenimiento, formación o simulaciones. Aplicaciones en marketing, entrenamiento empresarial, y más"
+        buttonText="Más información"
         buttonLink="/projects/smart-sparrow"
         model={{
-          type: 'laptop',
+          type: 'headset',
           alt: 'Smart Sparrow lesson builder',
           textures: [
             {
-              srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
+              srcSet: `${headsetTexture.jpg} 1280w, ${headsetTexture.jpg} 2560w`,
               placeholder: sprTexturePlaceholder,
             },
           ],
+          
         }}
       />
       <ProjectSummary
@@ -124,10 +130,10 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        title="Transforma la Realidad con Realidad Aumentada"
+        description="Desarrollamos aplicaciones de AR que superponen objetos digitales en el mundo real, ideal para marketing interactivo, visualización de productos y experiencias educativas"
+        buttonText="View project"
+        buttonLink="/projects/smart-sparrow"
         model={{
           type: 'phone',
           alt: 'App login screen',
@@ -148,13 +154,100 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
+        title="Dale Vida a tus Ideas con Diseño 3D"
+        description="Modelado y renderizado 3D para crear productos visuales realistas y atractivos, ya sea para prototipos, animaciones o ilustraciones digitales"
         buttonText="View project"
         buttonLink="/projects/slice"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
+          textures: [
+            {
+              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
+              placeholder: sliceTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-4"
+        alternate
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
+        title="Crea Universos de Entretenimiento con Videojuegos"
+        description="Diseño y desarrollo de videojuegos personalizados, adaptados a tus necesidades, desde juegos indie hasta experiencias inmersivas para diversas plataformas"
+        buttonText="View project"
+        buttonLink="/projects/smart-sparrow"
+        model={{
+          type: 'laptop',
+          alt: 'App login screen',
+          textures: [
+            {
+              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
+              placeholder: gamestackTexturePlaceholder,
+            },
+            {
+              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
+              placeholder: gamestackTexture2Placeholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-5"
+        sectionRef={projectFive}
+        visible={visibleSections.includes(projectFive.current)}
+        index={3}
+        title="Dale Vida a tus Ideas con Diseño 3D"
+        description="Impacta con Efectos Especiales de Última Generación"
+        buttonText="View project"
+        buttonLink="/projects/slice"
+        model={{
+          type: 'laptop',
+          alt: 'Annotating a biomedical image in the Slice app',
+          textures: [
+            {
+              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
+              placeholder: sliceTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-6"
+        alternate
+        sectionRef={projectSix}
+        visible={visibleSections.includes(projectSix.current)}
+        index={6}
+        title="Comunica Ideas Poderosas con Motion Graphics"
+        description="Animaciones gráficas para transmitir conceptos de manera dinámica y atractiva, perfectas para videos corporativos, publicitarios y presentaciones."
+        buttonText="View project"
+        buttonLink="/projects/motion-graphics"
+        model={{
+          type: 'laptop',
+          alt: 'Motion Graphics project showcase',
+          textures: [
+            {
+              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
+              placeholder: sliceTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      
+      <ProjectSummary
+        id="project-7"
+        sectionRef={projectSeven}
+        visible={visibleSections.includes(projectSeven.current)}
+        index={7}
+        title="Humaniza la Tecnología con Avatares Inteligentes"
+        description="Creación de avatares inteligentes y personalizados que interactúan de manera natural con usuarios, ideales para asistentes virtuales, eventos o entretenimiento."
+        buttonText="View project"
+        buttonLink="/projects/avatars"
+        model={{
+          type: 'laptop',
+          alt: 'Intelligent avatars interacting with users',
           textures: [
             {
               srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,

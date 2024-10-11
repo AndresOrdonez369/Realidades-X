@@ -1,6 +1,6 @@
-import profileImgLarge from '~/assets/profile-large.jpg';
+import profileImgLarge from '~/assets/profile.png';
 import profileImgPlaceholder from '~/assets/profile-placeholder.jpg';
-import profileImg from '~/assets/profile.jpg';
+import profileImg from '~/assets/profile.png';
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
@@ -17,22 +17,16 @@ import styles from './profile.module.css';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
-    <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hi there" start={visible} delay={500} />
-    </Heading>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Hamish, currently I live in Sydney working as a senior product designer at{' '}
-      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
-      animations, and icon illustration. Being comfortable with code allows me to rapidly
-      prototype and validate experiences. If you’re interested in the tools and software I
-      use check out my <Link href="/uses">uses page</Link>.
-    </Text>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and{' '}
-      <Link href="/projects/volkihar-knight">make mods</Link>. I’m always down for hearing
-      about new projects, so feel free to drop me a line.
-    </Text>
-  </Fragment>
+  <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
+    <DecoderText text="Explorando Nuevas Realidades" start={visible} delay={500} />
+  </Heading>
+  <Text className={styles.description} data-visible={visible} size="l" as="p">
+    Bienvenidos a Realidades (X), donde la creatividad y la tecnología se fusionan para transformar la percepción del mundo. Nos dedicamos a redefinir los límites con experiencias inmersivas en VR, AR, MR, videojuegos, IA, avatares y motion graphics. Aquí, cada proyecto es una ventana hacia lo inesperado, lo disruptivo, lo visionario.
+  </Text>
+  <Text className={styles.description} data-visible={visible} size="l" as="p">
+    Desde el diseño en múltiples niveles hasta la interacción en mundos digitales, nos apasiona crear universos donde lo imposible se convierte en realidad. Si estás listo para desafiar las normas y explorar lo desconocido, te invitamos a unirte a nuestro viaje.
+  </Text>
+</Fragment>
 );
 
 export const Profile = ({ id, visible, sectionRef }) => {

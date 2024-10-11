@@ -131,6 +131,36 @@ export function ProjectSummary({
             </div>
           </>
         )}
+        {model.type === 'headset' && (
+  <>
+    {renderKatakana('headset', visible)}
+    <div className={styles.model} data-device="headset">
+      {!modelLoaded && (
+        <Loader center className={styles.loader} data-visible={visible} />
+      )}
+      {isHydrated && visible && (
+        <Suspense>
+          <Model
+            alt={model.alt}
+            cameraPosition={{ x: 0, y: 0, z: 7 }} // Ajusta la posición de la cámara según el modelo
+            showDelay={300}
+            onLoad={handleModelLoad}
+            show={visible}
+            models={[
+              {
+                ...deviceModels.headset, // Aquí se carga el modelo del headset
+                texture: {
+                  ...model.textures[0], // Ajusta la textura si es necesario
+                  sizes: '(max-width: 768px) 50vw, 25vw',
+                },
+              },
+            ]}
+          />
+        </Suspense>
+      )}
+    </div>
+  </>
+)        }
         {model.type === 'phone' && (
           <>
             {renderKatakana('phone', visible)}

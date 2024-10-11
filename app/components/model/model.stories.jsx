@@ -7,6 +7,8 @@ import phoneTexture from '~/assets/gamestack-login.jpg';
 import laptopTexture from '~/assets/spr-lesson-builder-dark-large.jpg';
 import laptopTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
 import laptopTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
+import headsetTexture from '~/assets/headsetTexture.jpg';
+
 import { Model } from '~/components/model';
 import { StoryContainer } from '../../../.storybook/story-container';
 import { deviceModels } from './device-models';
@@ -38,6 +40,25 @@ export const Phone = () => (
           texture: {
             srcSet: `${phoneTexture2} 375w, ${phoneTexture2Large} 750w`,
             placeholder: phoneTexture2Placeholder,
+          },
+        },
+      ]}
+    />
+  </StoryContainer>
+);
+
+export const Headset = () => (
+  <StoryContainer padding={0}>
+    <Model
+      style={modelStyle}
+      cameraPosition={{ x: 0, y: 0, z: 9 }} // Ajusta la posición de la cámara si es necesario
+      alt="Headset model"
+      models={[
+        {
+          ...deviceModels.headset, // Asegúrate de que `deviceModels` tenga un modelo headset
+          position: { x: 0, y: 0, z: 0 },
+          texture: {
+            src: headsetTexture, // Usamos directamente la única textura disponible
           },
         },
       ]}
